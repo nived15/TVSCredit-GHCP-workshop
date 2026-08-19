@@ -74,13 +74,13 @@
           <li class="sidebar-nav-item">
             <a href="#step-4" class="sidebar-nav-link">
               <span class="sidebar-nav-number">4</span>
-              <span class="sidebar-nav-text">Agent Mode</span>
+              <span class="sidebar-nav-text">Plan Mode</span>
             </a>
           </li>
           <li class="sidebar-nav-item">
             <a href="#step-5" class="sidebar-nav-link">
               <span class="sidebar-nav-number">5</span>
-              <span class="sidebar-nav-text">Plan Mode</span>
+              <span class="sidebar-nav-text">Agent Mode</span>
             </a>
           </li>
           <li class="sidebar-nav-item">
@@ -217,12 +217,12 @@
           <h2>How Code Completion Works</h2>
           <p>As you write code, Copilot analyzes the context of your file and suggests completions. These suggestions appear as gray "ghost text" that you can accept with the <kbd>Tab</kbd> key.</p>
 
-          <h3>Example Prompt</h3>
-          <p>Add a New Function Using a Prompt</p>: Start typing a comment describing what you want:
+          <h3>Example Comment</h3>
+          <p>Add a New Function Using a Comment</p>: Start typing a comment describing what you want:
           <pre><code>Write a function to calculate the factorial of a number.</code></pre>
           <p>Copilot will automatically suggest the full function implementation as ghost text.</p>
 
-          <p>Add a New Class Using a Prompt</p>: Begin describing a class structure:
+          <p>Add a New Class Using a Comment</p>: Begin describing a class structure:
           <pre><code>Create a class named Invoice with amount, tax, and a method to calculate total.</code></pre>
           <p>Copilot will generate the class definition and related methods.</p>
 
@@ -311,18 +311,22 @@
 
           <p>Option 2: Select code and ask Copilot to explain it using slash commands:</p>
           <pre><code>/explain</code></pre>
+          <p><strong>Model to use for this exercise:</strong> GPT-5 mini</p>
 
           <h3>2. Generate Functions</h3>
           <p>Ask Copilot to write code for you:</p>
           <pre><code>Create a function that validates an email address and returns true if valid.</code></pre>
+          <p><strong>Model to use for this exercise:</strong> MAI-Code-1.1-Flash</p>
 
           <h3>3. Translate to New Technology</h3>
           <p>Convert code from one language or framework to another:</p>
           <pre><code>Convert this JavaScript function to Python.</code></pre>
+          <p><strong>Model to use for this exercise:</strong> Kimi K2.7 Code</p>
 
           <h3>4. Code Improvement</h3>
           <p>Get suggestions to improve your code quality:</p>
           <pre><code>How can I improve the performance of this function?</code></pre>
+          <p><strong>Model to use for this exercise:</strong> GPT-5 mini</p>
 
           <div class="info-box tip">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -354,56 +358,61 @@
           </nav>
         </section>
 
-        <!-- Step 4: Agent Mode -->
+        <!-- Step 4: Plan Mode -->
         <section id="step-4" class="step-section" aria-labelledby="step-4-title">
           <header class="step-header">
             <span class="step-number">Step 4 of 7</span>
-            <h1 id="step-4-title" class="step-title">Agent Mode</h1>
+            <h1 id="step-4-title" class="step-title">Plan Mode</h1>
             <p class="step-duration">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <circle cx="12" cy="12" r="10"/>
                 <polyline points="12 6 12 12 16 14"/>
               </svg>
-              15 minutes
+              10 minutes
             </p>
           </header>
 
-          <p>Agent Mode is Copilot's most autonomous feature. It can execute multi-step tasks, run commands, and make complex changes across your project.</p>
+          <p>Plan Mode helps you create a structured development plan before implementation, without spending AI credits writing code you might throw away. This is part of <strong>Spec-Driven Development</strong>, a recommended approach for AI-assisted coding.</p>
 
-          <h2>What Makes Agent Mode Different</h2>
-          <ul>
-            <li><strong>Autonomous Execution</strong>: Copilot can run terminal commands, create files, and iterate on solutions</li>
-            <li><strong>Error Recovery</strong>: When errors occur, Agent Mode attempts to fix them automatically</li>
-            <li><strong>Multi-file Operations</strong>: Can modify many files as part of a single task</li>
-          </ul>
-
-          <h2>Enabling Agent Mode</h2>
-          <ol>
-            <li>Open Copilot Chat</li>
-            <li>Select <strong>Agent</strong> from the mode selector at the bottom of the chat panel</li>
-          </ol>
-
-          <h2>Example Tasks for Agent Mode</h2>
-          <pre><code>Create a new Express.js API endpoint for user authentication with JWT tokens.</code></pre>
-
-          <pre><code>Set up a complete testing framework with example tests for the existing functions.</code></pre>
+          <h2>Example: Plan a Pong Game on an Ultra-Low Credit Budget</h2>
+          <p>Select <strong>Plan</strong> mode in Copilot Chat, then copy and paste the prompt below as-is. It asks Copilot to design a complete plan for a simple Pong game while staying within a strict 25-50 AI credit budget — a great way to see how far a small budget can go.</p>
 
           <figure class="image-container">
-            <img src="img/agent-mode.png" alt="Agent mode implementing code changes automatically">
-            <figcaption>Agent Mode working autonomously on a coding task</figcaption>
+            <img src="img/plan-mode.png" alt="Selecting Plan mode in Copilot Chat">
+            <figcaption>Switch to Plan mode for structured planning</figcaption>
           </figure>
 
-          <div class="info-box warning">
+          <pre><code>Act as an expert software architect specializing in ultra-low budget AI code generation. I have a strict limit of 25-50 AI credits to build a complete browser game.
+
+Do not write any game code yet. Instead, generate a comprehensive, single-turn development plan for a simple Pong game.
+
+Your plan must include:
+
+1. Architectural Layout: How to combine HTML5, CSS, and Vanilla JavaScript into a single, lightweight file.
+2. Asset Alternatives: Detailed description of how to use pure CSS and HTML Canvas drawing to avoid external images or sound files.
+3. State Management: A simple layout of the game loop, win/loss conditions, and score tracking variables.
+4. Token Optimization: Strategies to keep the final code generation request highly condensed to fit within minimal credit usage.</code></pre>
+
+          <div class="info-box tip">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
-              <line x1="12" y1="9" x2="12" y2="13"/>
-              <line x1="12" y1="17" x2="12.01" y2="17"/>
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="16" x2="12" y2="12"/>
+              <line x1="12" y1="8" x2="12.01" y2="8"/>
             </svg>
             <div class="info-box-content">
-              <strong>Caution</strong>
-              <p>Agent Mode can run commands and modify files. Always review the actions it proposes before allowing them to execute.</p>
+              <strong>Tip</strong>
+              <p>Review the generated plan before building anything. If a step looks like it will burn too many credits, ask Copilot to simplify it before moving on.</p>
             </div>
           </div>
+
+          <h2>Saving the Plan</h2>
+          <p>Switch to Agent mode and save the plan so it can guide implementation in the next step:</p>
+          <pre><code>Save the development plan in a file called plan.md</code></pre>
+
+          <figure class="image-container">
+            <img src="img/plan-result.png" alt="Development plan saved to file">
+            <figcaption>Your development plan is now documented</figcaption>
+          </figure>
 
           <nav class="step-navigation" aria-label="Step navigation">
             <button class="step-nav-button step-nav-prev" aria-label="Previous step">
@@ -423,59 +432,52 @@
           </nav>
         </section>
 
-        <!-- Step 5: Plan Mode -->
+        <!-- Step 5: Agent Mode -->
         <section id="step-5" class="step-section" aria-labelledby="step-5-title">
           <header class="step-header">
             <span class="step-number">Step 5 of 7</span>
-            <h1 id="step-5-title" class="step-title">Plan Mode</h1>
+            <h1 id="step-5-title" class="step-title">Agent Mode</h1>
             <p class="step-duration">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <circle cx="12" cy="12" r="10"/>
                 <polyline points="12 6 12 12 16 14"/>
               </svg>
-              10 minutes
+              15 minutes
             </p>
           </header>
 
-          <p>Plan Mode helps you create a structured development plan before implementation. This is part of <strong>Spec-Driven Development</strong>, a recommended approach for AI-assisted coding.</p>
+          <p>Agent Mode is Copilot's most autonomous feature. It can execute multi-step tasks, run commands, and make complex changes across your project. Below are two small, low-cost use cases you can try — copy and paste each prompt directly.</p>
 
-          <h2>Creating a Development Plan</h2>
+          <h2>Enabling Agent Mode</h2>
           <ol>
-            <li>Attach your architecture document using <code>#architecture.md</code></li>
-            <li>Select <strong>Plan</strong> mode in Copilot Chat</li>
+            <li>Open Copilot Chat</li>
+            <li>Select <strong>Agent</strong> from the mode selector at the bottom of the chat panel</li>
           </ol>
 
+          <h2>Use Case 1: Build the App from the Plan</h2>
+          <p>Using the <code>plan.md</code> file you saved in the previous step, ask Agent Mode to implement it:</p>
+          <pre><code>Using the plan.md file we created, implement the Pong game exactly as specified. Keep the implementation in a single HTML file and keep the code generation condensed to conserve AI credits.</code></pre>
+
           <figure class="image-container">
-            <img src="img/plan-mode.png" alt="Selecting Plan mode in Copilot Chat">
-            <figcaption>Switch to Plan mode for structured planning</figcaption>
+            <img src="img/agent-mode.png" alt="Agent mode implementing code changes automatically">
+            <figcaption>Agent Mode working autonomously on a coding task</figcaption>
           </figure>
 
-          <p>Enter the following prompt:</p>
-          <pre><code>Based on the attached document, please create step-by-step development plan that can be followed by the coding agents.
-Please suggest what granularity should be used to implement functions in an easy-to-test steps.</code></pre>
+          <h2>Use Case 2: Add a Dark/Light Theme Toggle</h2>
+          <p>Small, self-contained features are a great way to try Agent Mode without spending a lot of credits:</p>
+          <pre><code>Add a dark/light theme toggle button to the game. Use plain CSS variables and vanilla JavaScript only, no new dependencies. Keep the change small and focused on the toggle button and theme variables.</code></pre>
 
-          <div class="info-box tip">
+          <div class="info-box warning">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="12" y1="16" x2="12" y2="12"/>
-              <line x1="12" y1="8" x2="12.01" y2="8"/>
+              <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
             </svg>
             <div class="info-box-content">
-              <strong>Tip</strong>
-              <p>If there are points that should be improved, point them out! For example: "Considering the ease of unit testing, please also list any improvements or additions needed to the current plan."</p>
+              <strong>Caution</strong>
+              <p>Agent Mode can run commands and modify files. Always review the actions it proposes before allowing them to execute.</p>
             </div>
           </div>
-
-          <h2>Saving the Plan</h2>
-          <p>Switch to Agent mode and save the plan:</p>
-          <pre><code>Save the development plan in a file called plan.md</code></pre>
-
-          <figure class="image-container">
-            <img src="img/plan-result.png" alt="Development plan saved to file">
-            <figcaption>Your development plan is now documented</figcaption>
-          </figure>
-
-          <p>Now you have two specification files: <code>architecture.md</code> and <code>plan.md</code>. These will guide Copilot during implementation.</p>
 
           <nav class="step-navigation" aria-label="Step navigation">
             <button class="step-nav-button step-nav-prev" aria-label="Previous step">
@@ -514,7 +516,7 @@ Please suggest what granularity should be used to implement functions in an easy
           <h2>Generate Unit Tests</h2>
           <p>Use the following prompt to have Copilot create unit tests:</p>
           <pre><code>We want to add unit testing to this project.
-Please create unit tests for all the important functions in this application.
+Please create 2-3 unit tests for the most important function(s) in this application.
 Install necessary libraries to support this change.
 Then in the readme file, add explanation on how to run the unit tests.</code></pre>
 
@@ -580,7 +582,7 @@ Then in the readme file, add explanation on how to run the unit tests.</code></p
 
           <h2>Generate Application Documentation</h2>
           <p>Use this prompt to create detailed documentation:</p>
-          <pre><code>Create a documentation on how the current application works. Add a user flow chart and sequence diagram, using Mermaid format.</code></pre>
+          <pre><code>Create a documentation on how the current application works. Limit each important section to 4-5 concise bullet points. Add a user flow chart and sequence diagram, using Mermaid format.</code></pre>
 
           <figure class="image-container">
             <img src="img/ide-doc2.png" alt="Generated documentation">
@@ -598,8 +600,8 @@ Then in the readme file, add explanation on how to run the unit tests.</code></p
             <li>Setting up a project and workspace for Copilot</li>
             <li>Using code completion to speed up everyday coding</li>
             <li>Getting context-aware help and debugging support from Copilot Chat</li>
-            <li>Using Agent Mode for autonomous, multi-step tasks</li>
             <li>Planning complex features with Plan Mode before implementation</li>
+            <li>Using Agent Mode for autonomous, multi-step tasks</li>
             <li>Generating unit tests and comprehensive documentation</li>
           </ul>
 
