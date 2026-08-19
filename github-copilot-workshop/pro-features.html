@@ -114,6 +114,17 @@
 
           <p>Copilot Instructions help you customize how Copilot generates code and reviews your work. They're essential for maintaining consistency across your team.</p>
 
+          <h2>What are Custom Instructions?</h2>
+          <p>Instructions are project-wide guidance stored in a single file that Copilot automatically reads on every request in that repository. Unlike a one-off prompt, they don't need to be retyped — once the file exists, every conversation and every teammate benefits from the same baseline.</p>
+
+          <p>Think of instructions as the "house rules" for your project: standing guidance that should apply no matter what you ask Copilot to do, such as:</p>
+          <ul>
+            <li>Enforcing a coding style or language/framework preference</li>
+            <li>Documenting architecture conventions (folder structure, layering)</li>
+            <li>Setting security rules (no hardcoded secrets, validate all input)</li>
+            <li>Establishing testing expectations (coverage, frameworks to use)</li>
+          </ul>
+
           <h2>Setting Up Instructions</h2>
           <p>Create a file at <code>.github/copilot-instructions.md</code> in your repository:</p>
 
@@ -201,34 +212,80 @@
           <p>Custom Agents allow you to create specialized AI assistants for specific tasks in your project. This is a powerful feature to enhance your workflow.</p>
 
           <h2>What are Custom Agents?</h2>
-          <p>Custom Agents are specialized AI assistants you can configure for specific tasks. They can be scoped to particular file types, coding patterns, or documentation tasks.</p>
+          <p>Custom Agents are specialized AI personas you explicitly invoke by name (e.g. <code>@code-reviewer</code>) when you want a different "hat" than the default assistant — a fixed role, tone, and set of responsibilities you switch to on demand.</p>
+
+          <p>Think of an agent as a colleague with one job: you call on them by name when that job is what you need, such as:</p>
+          <ul>
+            <li>A reviewer that only critiques code, never edits it</li>
+            <li>A security specialist that only audits for vulnerabilities</li>
+            <li>An onboarding guide that answers "how does this work?" questions</li>
+            <li>A release-notes writer that only summarizes changes for users</li>
+          </ul>
 
           <h2>Creating a Custom Agent</h2>
-          <p>You can create custom agents for specific tasks. For example, a "README creator" agent:</p>
+          <p>You can create custom agents for specific roles. Here are three examples you can adapt:</p>
+
+          <h3>1. Code Reviewer Agent — a persona that only critiques, never edits</h3>
           <ol>
-            <li>Create a file: <code>.github/agents/readme-creator-agent.md</code></li>
+            <li>Create a file: <code>.github/agents/code-reviewer.md</code></li>
             <li>Add agent configuration:</li>
           </ol>
 
           <pre><code>---
-name: readme-creator
-description: Generates comprehensive README files for projects
+name: code-reviewer
+description: Reviews code changes for bugs, security issues, and style violations without making edits
 ---
 
-You are a technical writer specialized in creating clear, comprehensive README files.
+You are a senior code reviewer. When invoked, you only READ and COMMENT — never modify files.
 
-When invoked, analyze the project structure and:
-1. Identify the project's purpose and main features
-2. Document installation and setup steps
-3. Provide usage examples
-4. List available scripts/commands
-5. Include contribution guidelines if applicable
+For any code shown to you:
+1. Flag logic errors, edge cases, and potential bugs
+2. Check for security issues (input validation, secrets, injection risks)
+3. Note violations of the project's coding standards
+4. Suggest specific fixes, but do not apply them yourself
 
-Keep the tone professional but approachable. Use proper Markdown formatting with headers, code blocks, and lists.</code></pre>
+Be direct and concise. Only report high-confidence issues — skip style nitpicks unless asked.</code></pre>
+          <p>Usage: <code>@code-reviewer check this pull request</code></p>
+
+          <h3>2. Security Reviewer Agent — a persona focused solely on security, not general code quality</h3>
+          <pre><code>---
+name: security-reviewer
+description: Audits code for security vulnerabilities and unsafe patterns
+---
+
+You are a security specialist. When invoked, you only look for security issues — ignore
+style, performance, or general code quality unless it directly creates a vulnerability.
+
+For any code shown to you:
+1. Check for injection risks (SQL, command, script) and unsafe input handling
+2. Look for hardcoded secrets, credentials, or tokens
+3. Verify authentication/authorization checks are present where needed
+4. Flag insecure use of dependencies, deserialization, or file/network access
+5. Rate each finding by severity (low/medium/high) and confidence
+
+Report only high-confidence findings. Do not make changes yourself — recommend fixes only.</code></pre>
+          <p>Usage: <code>@security-reviewer audit this authentication module</code></p>
+
+          <h3>3. Onboarding Guide Agent — a persona for new-contributor questions</h3>
+          <pre><code>---
+name: onboarding-guide
+description: Answers "how does this project work" questions for new contributors
+---
+
+You are a friendly onboarding guide for this repository. Explain concepts in plain language,
+assuming the reader is new to the codebase but not new to programming.
+
+When asked about a file, folder, or workflow:
+1. Explain its purpose in 1-2 sentences before diving into detail
+2. Point to related files/folders they should also look at
+3. Avoid jargon unless you define it first</code></pre>
+          <p>Usage: <code>@onboarding-guide how does the build process work here?</code></p>
 
           <h2>Using Your Custom Agent</h2>
-          <p>Invoke the agent from Copilot Chat:</p>
-          <pre><code>@readme-creator Generate a README for this project</code></pre>
+          <p>Invoke an agent from Copilot Chat by name:</p>
+          <pre><code>@code-reviewer check this pull request
+@security-reviewer audit this authentication module
+@onboarding-guide how does the build process work here?</code></pre>
 
           <div class="info-box tip">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -298,57 +355,63 @@ Keep the tone professional but approachable. Use proper Markdown formatting with
           <p>Skills are automatically loaded when you open a workspace, and Copilot will invoke them based on the conversation context and the skill's <code>applyTo</code> patterns.</p>
 
           <h2>Creating Your First Skill</h2>
-          <p>Let's create a skill for writing unit tests. Create a file named <code>write-tests.SKILL.md</code> in your <code>.github/copilot/skills/</code> directory:</p>
+          <p>You can create skills for specific, repeatable tasks. Here are three examples you can adapt:</p>
+
+          <h3>1. Error handling skill (auto-triggers on source files)</h3>
+          <p>Create a file named <code>error-handling.SKILL.md</code> in your <code>.github/copilot/skills/</code> directory:</p>
           <pre><code>---
-name: write-tests
-description: Write comprehensive unit tests following best practices
+name: error-handling
+description: Ensures errors are handled explicitly and safely, not silently swallowed
 applyTo:
-  - "**/*.test.js"
-  - "**/*.test.ts"
-  - "**/*.spec.js"
-  - "**/*.spec.ts"
+  - "**/*.js"
+  - "**/*.ts"
+  - "**/*.py"
 ---
 
-# Writing Unit Tests
+# Error Handling Style
 
-When writing unit tests:
+When writing or modifying code that can fail:
+1. Never leave a catch/except block empty — log or handle the error explicitly
+2. Fail with a clear, actionable error message; avoid generic "something went wrong" text
+3. Distinguish expected errors (validation, not-found) from unexpected ones (crashes, bugs)
+4. Don't swallow errors silently to "make tests pass" — surface them appropriately</code></pre>
 
-1. **Naming Convention**: Use descriptive test names that explain what is being tested and the expected outcome
-   - Format: `it('should [expected behavior] when [condition]', ...)`
+          <h3>2. Accessibility skill (auto-triggers on UI files)</h3>
+          <pre><code>---
+name: accessibility
+description: Applies basic accessibility (a11y) practices to UI code
+applyTo:
+  - "**/*.html"
+  - "**/*.jsx"
+  - "**/*.tsx"
+  - "**/*.vue"
+---
 
-2. **AAA Pattern**: Structure tests using Arrange, Act, Assert
-   - Arrange: Set up test data and dependencies
-   - Act: Execute the code being tested
-   - Assert: Verify the expected outcome
+# Accessibility Guidelines
 
-3. **Coverage**: Write tests for:
-   - Happy path scenarios
-   - Edge cases and boundary conditions
-   - Error handling and exceptions
+When generating or editing UI markup:
+1. Every interactive element (button, link, input) must have an accessible label
+2. Images need meaningful `alt` text, or `alt=""` if purely decorative
+3. Use semantic HTML elements (`&lt;button&gt;`, `&lt;nav&gt;`, `&lt;header&gt;`) over generic `&lt;div&gt;`s where possible
+4. Ensure sufficient color contrast is called out when colors are hardcoded
+5. Preserve keyboard navigability — don't remove focus outlines without a visible alternative</code></pre>
 
-4. **Mocking**: Mock external dependencies to keep tests isolated and fast
+          <h3>3. Documentation skill (kept for the "always vs. auto vs. manual" contrast)</h3>
+          <pre><code>---
+name: doc-style
+description: Keeps generated documentation short and structured
+applyTo:
+  - "**/*.md"
+  - "docs/**/*"
+---
 
-5. **Assertions**: Use specific, clear assertions that make test failures easy to diagnose
+# Documentation Style
 
-## Example Test Structure
-
-```javascript
-describe('UserService', () => {
-  it('should create a new user when valid data is provided', async () => {
-    // Arrange
-    const userData = { name: 'John Doe', email: 'john@example.com' };
-    const mockDb = { save: jest.fn().mockResolvedValue(userData) };
-    const service = new UserService(mockDb);
-
-    // Act
-    const result = await service.createUser(userData);
-
-    // Assert
-    expect(result).toEqual(userData);
-    expect(mockDb.save).toHaveBeenCalledWith(userData);
-  });
-});
-```</code></pre>
+When generating or updating documentation:
+1. Limit each section to 4-5 concise bullet points
+2. Lead each section with a one-line summary before the bullets
+3. Use diagrams (Mermaid) only when they clarify a flow or relationship
+4. Avoid restating information already covered in another section</code></pre>
 
           <div class="info-box note">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -421,8 +484,8 @@ applyTo:
           <h2>Exercise 3: Test Your Skills</h2>
           <p>Put your skills to work in real scenarios:</p>
           <ol>
-            <li>Open a test file that matches your unit test skill's <code>applyTo</code> pattern</li>
-            <li>Ask Copilot: "Write tests for the UserService class"</li>
+            <li>Open a source file that matches your error handling skill's <code>applyTo</code> pattern</li>
+            <li>Ask Copilot: "Add error handling to this function"</li>
             <li>Observe how Copilot applies your skill's guidelines</li>
             <li>Refine the skill based on the results — add more examples or clarify instructions</li>
             <li>Try the same prompt without the skill to see the difference</li>
