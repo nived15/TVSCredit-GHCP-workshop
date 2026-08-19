@@ -601,84 +601,24 @@ applyTo:
           <p>As a capstone exercise, let's build a complete enterprise-ready application from scratch using everything you've learned so far. We'll create an Employee Management System with CRUD operations.</p>
 
           <h2>Define Your Requirements</h2>
-          <p>Start by providing Copilot with a clear requirement prompt for an enterprise application:</p>
-          <pre><code>I want to build an Employee Management System with the following requirements:
+          <p>Start by providing Copilot with a clear, build-oriented prompt for an enterprise application. Notice this prompt asks Copilot to build the working application directly, not just propose an architecture:</p>
+          <pre><code>Build a complete, working Employee Management System application for me. Use Python Flask for the backend, plain HTML/CSS/JavaScript for the frontend, and SQLite for the database.
 
 ## Functional Requirements
 - Create, Read, Update, and Delete (CRUD) operations for employee records
 - Employee fields: ID, Name, Email, Department, Role, Hire Date, Salary
 - Search and filter employees by department and role
 - Basic authentication with login/logout functionality
-- Dashboard showing employee statistics
+- Dashboard showing employee statistics (total employees, by department, recent hires)
 
 ## Non-Functional Requirements
 - RESTful API design
-- Input validation and error handling
+- Input validation and error handling on both client and server
 - Responsive UI that works on desktop and mobile
 - Clean, maintainable code following best practices
 
-Please suggest an architecture for this application.</code></pre>
+Please set up the full project structure, implement the backend API, build the frontend UI, wire everything together, and seed the database with a few sample employees so I can run the app immediately and try it out. Ask me questions only if something is truly ambiguous — otherwise make reasonable decisions and build the whole thing.</code></pre>
 
-          <h2>Generate App Structure</h2>
-          <p>Ask Copilot to generate the application structure based on your preferred tech stack:</p>
-          <pre><code>Based on the requirements above, please generate the project structure for this application using [YOUR PREFERRED STACK].
-
-For example:
-- Backend: Python Flask / Node.js Express / Java Spring Boot
-- Frontend: React / Vue.js / Plain HTML/CSS/JavaScript
-- Database: SQLite / PostgreSQL / MongoDB
-
-Please create the folder structure and initial files with boilerplate code.</code></pre>
-
-
-          <h2>Optional: Add UI from Mock or Drawing</h2>
-          <p>If you have a UI mockup or wireframe, you can attach it to help Copilot generate matching UI components:</p>
-          <ol>
-            <li>Attach your UI mockup image in Copilot Chat</li>
-            <li>Use a prompt like:</li>
-          </ol>
-          <pre><code>Based on the attached UI mockup, please generate the HTML/CSS for this interface. 
-Match the layout, colors, and styling as closely as possible.
-Make the design responsive for mobile devices.</code></pre>
-
-          <div class="info-box tip">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="12" y1="16" x2="12" y2="12"/>
-              <line x1="12" y1="8" x2="12.01" y2="8"/>
-            </svg>
-            <div class="info-box-content">
-              <strong>Tip</strong>
-              <p>You can use hand-drawn sketches or wireframe tools like Figma, Balsamiq, or even simple diagrams to guide Copilot's UI generation.</p>
-            </div>
-          </div>
-
-          <h2>Save the Architecture</h2>
-          <p>Use Agent Mode to save the architecture to a file:</p>
-          <pre><code>Save the architecture suggestions to an architecture.md file in the project root.</code></pre>
-
-          <figure class="image-container">
-            <img src="img/arch-result.png" alt="Architecture document saved">
-            <figcaption>Architecture documentation is now part of your project</figcaption>
-          </figure>
-
-          <h2>Implement with Custom Instructions and Agents</h2>
-          <p>Put the earlier steps in this track to work: reuse your <code>.github/copilot-instructions.md</code> and any custom agents or skills you created to implement the plan.</p>
-          <pre><code>Please implement this application following the saved architecture.md, my repository's Copilot instructions, and the relevant custom agents/skills.
-If there are additional considerations needed, please ask me questions.</code></pre>
-
-          <h2>Verify Implementation</h2>
-          <p>Once implementation is complete, check:</p>
-          <ol>
-            <li><strong>Directory Structure</strong>: Is it structured according to the recommended architecture?</li>
-            <li><strong>Basic Files</strong>: Are necessary files (app.py, HTML templates, CSS files, etc.) created?</li>
-            <li><strong>Operation Check</strong>: Run simple tests to verify functionality</li>
-          </ol>
-
-          <figure class="image-container">
-            <img src="img/sample-app.png" alt="Application running">
-            <figcaption>Your application is now running!</figcaption>
-          </figure>
 
           <h2>🎉 Congratulations!</h2>
           <p>You've completed the "Copilot Pro Features" learning path! You've learned:</p>
