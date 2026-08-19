@@ -71,9 +71,9 @@ To create a new skill:
 
 ## Learn More
 
-Complete the **Path 3: Extended Capabilities** workshop to learn more about Agent Skills and other advanced Copilot features:
+Complete the **Path 2: Copilot Pro Features** workshop to learn more about Agent Skills and other advanced Copilot features:
 - [Workshop Home](../../index.html)
-- [Extended Capabilities](../../github-copilot-workshop/extended-capabilities.html)
+- [Copilot Pro Features](../../github-copilot-workshop/pro-features.html)
 
 ## Resources
 
