@@ -2,7 +2,7 @@
 
 Master AI-powered coding with GitHub Copilot through hands-on exercises and real-world examples.
 
-**🚀 [Start the Workshop](https://customer-workshops.github.io/copilot-workshop/)**
+**🚀 [Start the Workshop](https://nived15.github.io/TVSCredit-GHCP-workshop/)**
 
 ## Overview
 
@@ -51,7 +51,7 @@ Explore advanced Copilot features for professional development workflows.
 
 ### Option 1: Access Online
 
-Visit the workshop at **[https://customer-workshops.github.io/copilot-workshop/](https://customer-workshops.github.io/copilot-workshop/)** - no installation required!
+Visit the workshop at **[https://nived15.github.io/TVSCredit-GHCP-workshop/](https://nived15.github.io/TVSCredit-GHCP-workshop/)** - no installation required!
 
 ### Option 2: Local Development
 
