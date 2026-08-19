@@ -23,40 +23,23 @@ This workshop provides a comprehensive learning experience for GitHub Copilot, c
 Learn IDE-based Copilot features through hands-on exercises. Perfect for developers new to AI-assisted coding.
 
 **Topics Covered:**
-1. Project Setup with Codespaces
+1. Project Setup
 2. Code Completion
 3. Copilot Chat
 4. Agent Mode
-5. End-to-End App Development
-6. Plan Mode
-7. Add Functionality
-8. Add Unit Tests
-9. Add Documentation
-10. Custom Agents (Optional)
+5. Plan Mode
+6. Add Unit Tests
+7. Add Documentation
 
 ### Path 2: Copilot Pro Features
 
 Explore advanced Copilot features for professional development workflows.
 
 **Topics Covered:**
-1. Create Repos with Coding Agent
-2. Plan & Design with Custom Agents
-3. Develop with Coding Agent
-4. Copilot Instructions Setup
-5. PR Generation & Code Review
-6. Copilot Spaces
-7. Agent Mission Control
-
-### Path 3: Extended Copilot Capabilities
-
-Go beyond the IDE and explore the broader Copilot ecosystem — CLI, SDK, agent extensibility, and memory. Ideal for developers who have completed Path 1 or Path 2.
-
-**Topics Covered:**
-1. Copilot CLI
-2. Copilot SDK
+1. Copilot Instructions
+2. Custom Agents
 3. Agent Skills
-4. Sub-Agents
-5. Copilot Memory
+4. End-to-End App Development
 
 ## Prerequisites
 
@@ -102,7 +85,6 @@ copilot-workshop/
 └── github-copilot-workshop/
     ├── start-coding.html           # Path 1: Start Coding with AI
     ├── pro-features.html           # Path 2: Copilot Pro Features
-    ├── extended-capabilities.html  # Path 3: Extended Copilot Capabilities
     ├── codelab.json                # Workshop metadata
     ├── css/
     │   └── styles.css              # Stylesheet

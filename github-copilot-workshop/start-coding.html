@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learn IDE-based GitHub Copilot features through hands-on exercises. Master code completion, Copilot Chat, agent mode, and more.">
+  <meta name="description" content="Learn IDE-based GitHub Copilot features through hands-on exercises. Master code completion, Copilot Chat, agent mode, plan mode, unit tests, and documentation.">
   <meta name="theme-color" content="#6C21D9">
   <title>Start Coding with AI - GitHub Copilot Workshop</title>
   <link rel="stylesheet" href="css/styles.css">
@@ -27,7 +27,6 @@
       <a href="../index.html" class="header-nav-link">Home</a>
       <a href="start-coding.html" class="header-nav-link active">Start Coding with AI</a>
       <a href="pro-features.html" class="header-nav-link">Copilot Pro Features</a>
-      <a href="extended-capabilities.html" class="header-nav-link">Extended Capabilities</a>
       <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
         <svg class="theme-toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -81,37 +80,19 @@
           <li class="sidebar-nav-item">
             <a href="#step-5" class="sidebar-nav-link">
               <span class="sidebar-nav-number">5</span>
-              <span class="sidebar-nav-text">End-to-End App Development</span>
+              <span class="sidebar-nav-text">Plan Mode</span>
             </a>
           </li>
           <li class="sidebar-nav-item">
             <a href="#step-6" class="sidebar-nav-link">
               <span class="sidebar-nav-number">6</span>
-              <span class="sidebar-nav-text">Plan Mode</span>
+              <span class="sidebar-nav-text">Add Unit Tests</span>
             </a>
           </li>
           <li class="sidebar-nav-item">
             <a href="#step-7" class="sidebar-nav-link">
               <span class="sidebar-nav-number">7</span>
-              <span class="sidebar-nav-text">Add Functionality</span>
-            </a>
-          </li>
-          <li class="sidebar-nav-item">
-            <a href="#step-8" class="sidebar-nav-link">
-              <span class="sidebar-nav-number">8</span>
-              <span class="sidebar-nav-text">Add Unit Tests</span>
-            </a>
-          </li>
-          <li class="sidebar-nav-item">
-            <a href="#step-9" class="sidebar-nav-link">
-              <span class="sidebar-nav-number">9</span>
               <span class="sidebar-nav-text">Add Documentation</span>
-            </a>
-          </li>
-          <li class="sidebar-nav-item">
-            <a href="#step-10" class="sidebar-nav-link">
-              <span class="sidebar-nav-number">10</span>
-              <span class="sidebar-nav-text">Custom Agents (Optional)</span>
             </a>
           </li>
         </ol>
@@ -120,10 +101,10 @@
       <div class="progress-container">
         <div class="progress-label">
           <span>Progress</span>
-          <span><span class="progress-current">1</span> / <span class="progress-total">10</span></span>
+          <span><span class="progress-current">1</span> / <span class="progress-total">7</span></span>
         </div>
         <div class="progress-bar">
-          <div class="progress-fill" style="width: 9%;"></div>
+          <div class="progress-fill" style="width: 14.3%;"></div>
         </div>
       </div>
     </aside>
@@ -138,7 +119,7 @@
         <!-- Step 1: Project Setup -->
         <section id="step-1" class="step-section active" aria-labelledby="step-1-title">
           <header class="step-header">
-            <span class="step-number">Step 1 of 10</span>
+            <span class="step-number">Step 1 of 7</span>
             <h1 id="step-1-title" class="step-title">Project Setup</h1>
             <p class="step-duration">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -219,7 +200,7 @@
         <!-- Step 2: Code Completion -->
         <section id="step-2" class="step-section" aria-labelledby="step-2-title">
           <header class="step-header">
-            <span class="step-number">Step 2 of 10</span>
+            <span class="step-number">Step 2 of 7</span>
             <h1 id="step-2-title" class="step-title">Code Completion</h1>
             <p class="step-duration">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -293,7 +274,7 @@
         <!-- Step 3: Copilot Chat -->
         <section id="step-3" class="step-section" aria-labelledby="step-3-title">
           <header class="step-header">
-            <span class="step-number">Step 3 of 10</span>
+            <span class="step-number">Step 3 of 7</span>
             <h1 id="step-3-title" class="step-title">Copilot Chat</h1>
             <p class="step-duration">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -376,7 +357,7 @@
         <!-- Step 4: Agent Mode -->
         <section id="step-4" class="step-section" aria-labelledby="step-4-title">
           <header class="step-header">
-            <span class="step-number">Step 4 of 10</span>
+            <span class="step-number">Step 4 of 7</span>
             <h1 id="step-4-title" class="step-title">Agent Mode</h1>
             <p class="step-duration">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -442,107 +423,11 @@
           </nav>
         </section>
 
-        <!-- Step 5: End-to-End App Development -->
+        <!-- Step 5: Plan Mode -->
         <section id="step-5" class="step-section" aria-labelledby="step-5-title">
           <header class="step-header">
-            <span class="step-number">Step 5 of 10</span>
-            <h1 id="step-5-title" class="step-title">End-to-End App Development</h1>
-            <p class="step-duration">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
-              </svg>
-              60 minutes
-            </p>
-          </header>
-
-          <p>Let's build a complete enterprise-ready application from scratch using Copilot. We'll create an Employee Management System with CRUD operations.</p>
-
-          <h2>Define Your Requirements</h2>
-          <p>Start by providing Copilot with a clear requirement prompt for an enterprise application:</p>
-          <pre><code>I want to build an Employee Management System with the following requirements:
-
-## Functional Requirements
-- Create, Read, Update, and Delete (CRUD) operations for employee records
-- Employee fields: ID, Name, Email, Department, Role, Hire Date, Salary
-- Search and filter employees by department and role
-- Basic authentication with login/logout functionality
-- Dashboard showing employee statistics
-
-## Non-Functional Requirements
-- RESTful API design
-- Input validation and error handling
-- Responsive UI that works on desktop and mobile
-- Clean, maintainable code following best practices
-
-Please suggest an architecture for this application.</code></pre>
-
-          <h2>Generate App Structure</h2>
-          <p>Ask Copilot to generate the application structure based on your preferred tech stack:</p>
-          <pre><code>Based on the requirements above, please generate the project structure for this application using [YOUR PREFERRED STACK].
-
-For example:
-- Backend: Python Flask / Node.js Express / Java Spring Boot
-- Frontend: React / Vue.js / Plain HTML/CSS/JavaScript
-- Database: SQLite / PostgreSQL / MongoDB
-
-Please create the folder structure and initial files with boilerplate code.</code></pre>
-
-
-          <h2>Optional: Add UI from Mock or Drawing</h2>
-          <p>If you have a UI mockup or wireframe, you can attach it to help Copilot generate matching UI components:</p>
-          <ol>
-            <li>Attach your UI mockup image in Copilot Chat</li>
-            <li>Use a prompt like:</li>
-          </ol>
-          <pre><code>Based on the attached UI mockup, please generate the HTML/CSS for this interface. 
-Match the layout, colors, and styling as closely as possible.
-Make the design responsive for mobile devices.</code></pre>
-
-          <div class="info-box tip">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="12" y1="16" x2="12" y2="12"/>
-              <line x1="12" y1="8" x2="12.01" y2="8"/>
-            </svg>
-            <div class="info-box-content">
-              <strong>Tip</strong>
-              <p>You can use hand-drawn sketches or wireframe tools like Figma, Balsamiq, or even simple diagrams to guide Copilot's UI generation.</p>
-            </div>
-          </div>
-
-          <h2>Save the Architecture</h2>
-          <p>Use Agent Mode to save the architecture to a file:</p>
-          <pre><code>Save the architecture suggestions to an architecture.md file in the project root.</code></pre>
-
-          <figure class="image-container">
-            <img src="img/arch-result.png" alt="Architecture document saved">
-            <figcaption>Architecture documentation is now part of your project</figcaption>
-          </figure>
-
-          <nav class="step-navigation" aria-label="Step navigation">
-            <button class="step-nav-button step-nav-prev" aria-label="Previous step">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <line x1="19" y1="12" x2="5" y2="12"/>
-                <polyline points="12 19 5 12 12 5"/>
-              </svg>
-              Previous
-            </button>
-            <button class="step-nav-button primary step-nav-next" aria-label="Next step">
-              Next
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </button>
-          </nav>
-        </section>
-
-        <!-- Step 6: Plan Mode -->
-        <section id="step-6" class="step-section" aria-labelledby="step-6-title">
-          <header class="step-header">
-            <span class="step-number">Step 6 of 10</span>
-            <h1 id="step-6-title" class="step-title">Plan Mode</h1>
+            <span class="step-number">Step 5 of 7</span>
+            <h1 id="step-5-title" class="step-title">Plan Mode</h1>
             <p class="step-duration">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <circle cx="12" cy="12" r="10"/>
@@ -610,106 +495,11 @@ Please suggest what granularity should be used to implement functions in an easy
           </nav>
         </section>
 
-        <!-- Step 7: Add Functionality -->
-        <section id="step-7" class="step-section" aria-labelledby="step-7-title">
+        <!-- Step 6: Add Unit Tests -->
+        <section id="step-6" class="step-section" aria-labelledby="step-6-title">
           <header class="step-header">
-            <span class="step-number">Step 7 of 10</span>
-            <h1 id="step-7-title" class="step-title">Add Functionality</h1>
-            <p class="step-duration">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
-              </svg>
-              15 minutes
-            </p>
-          </header>
-
-          <p>Now let's implement the application using Copilot's Agent mode with our specification documents.</p>
-
-          <h2>Custom Instructions</h2>
-          <p>Before implementing, set up custom instructions to guide Copilot:</p>
-          <ol>
-            <li>Open <code>.github/copilot-instructions.md</code></li>
-            <li>Add the following lines:</li>
-          </ol>
-
-          <pre><code>Before making any big changes to the project, always check the architecture documentation in `architecture.md` to ensure alignment with the overall design and goals.</code></pre>
-
-          <figure class="image-container">
-            <img src="img/copilot-inst.png" alt="Custom instructions file">
-            <figcaption>Custom instructions help Copilot understand your project conventions</figcaption>
-          </figure>
-
-          <h2>Prompt Files</h2>
-          <p>For reusable prompts, create prompt files at <code>.github/prompts/*.prompt.md</code>:</p>
-
-          <pre><code>---
-agent: 'agent'
-description: 'Generate a clear code explanation with examples'
----
-
-Explain the following code in a clear, beginner-friendly way:
-
-Code to explain: ${input:code:Paste your code here}
-Target audience: ${input:audience:Who is this explanation for?}
-
-Please provide:
-* A brief overview of what the code does
-* A step-by-step breakdown of the main parts
-* Explanation of key concepts
-* A simple example showing how it works</code></pre>
-
-          <figure class="image-container">
-            <img src="img/prompt-result.png" alt="Prompt file in action">
-            <figcaption>Prompt files provide reusable, structured prompts</figcaption>
-          </figure>
-
-          <h2>Start Implementation</h2>
-          <p>Attach the <code>plan.md</code> file and use this prompt:</p>
-          <pre><code>Please implement the development of this project using `plan.md` and other necessary documents.
-If there are additional considerations needed, please ask me questions.</code></pre>
-
-          <figure class="image-container">
-            <img src="img/agent-mode.png" alt="Copilot implementing the application">
-            <figcaption>Copilot implements the application following the plan</figcaption>
-          </figure>
-
-          <h2>Verify Implementation</h2>
-          <p>Once implementation is complete, check:</p>
-          <ol>
-            <li><strong>Directory Structure</strong>: Is it structured according to the recommended architecture?</li>
-            <li><strong>Basic Files</strong>: Are necessary files (app.py, HTML templates, CSS files, etc.) created?</li>
-            <li><strong>Operation Check</strong>: Run simple tests to verify functionality</li>
-          </ol>
-
-          <figure class="image-container">
-            <img src="img/sample-app.png" alt="Application running">
-            <figcaption>Your application is now running!</figcaption>
-          </figure>
-
-          <nav class="step-navigation" aria-label="Step navigation">
-            <button class="step-nav-button step-nav-prev" aria-label="Previous step">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <line x1="19" y1="12" x2="5" y2="12"/>
-                <polyline points="12 19 5 12 12 5"/>
-              </svg>
-              Previous
-            </button>
-            <button class="step-nav-button primary step-nav-next" aria-label="Next step">
-              Next
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </button>
-          </nav>
-        </section>
-
-        <!-- Step 8: Add Unit Tests -->
-        <section id="step-8" class="step-section" aria-labelledby="step-8-title">
-          <header class="step-header">
-            <span class="step-number">Step 8 of 10</span>
-            <h1 id="step-8-title" class="step-title">Add Unit Tests</h1>
+            <span class="step-number">Step 6 of 7</span>
+            <h1 id="step-6-title" class="step-title">Add Unit Tests</h1>
             <p class="step-duration">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <circle cx="12" cy="12" r="10"/>
@@ -772,11 +562,11 @@ Then in the readme file, add explanation on how to run the unit tests.</code></p
           </nav>
         </section>
 
-        <!-- Step 9: Add Documentation -->
-        <section id="step-9" class="step-section" aria-labelledby="step-9-title">
+        <!-- Step 7: Add Documentation -->
+        <section id="step-7" class="step-section" aria-labelledby="step-7-title">
           <header class="step-header">
-            <span class="step-number">Step 9 of 10</span>
-            <h1 id="step-9-title" class="step-title">Add Documentation</h1>
+            <span class="step-number">Step 7 of 7</span>
+            <h1 id="step-7-title" class="step-title">Add Documentation</h1>
             <p class="step-duration">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <circle cx="12" cy="12" r="10"/>
@@ -802,110 +592,15 @@ Then in the readme file, add explanation on how to run the unit tests.</code></p
             <figcaption>Documentation includes Mermaid diagrams for visual representation</figcaption>
           </figure>
 
-          <nav class="step-navigation" aria-label="Step navigation">
-            <button class="step-nav-button step-nav-prev" aria-label="Previous step">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <line x1="19" y1="12" x2="5" y2="12"/>
-                <polyline points="12 19 5 12 12 5"/>
-              </svg>
-              Previous
-            </button>
-            <button class="step-nav-button primary step-nav-next" aria-label="Next step">
-              Next
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </button>
-          </nav>
-        </section>
-
-        <!-- Step 10: Custom Agents (Optional) -->
-        <section id="step-10" class="step-section" aria-labelledby="step-10-title">
-          <header class="step-header">
-            <span class="step-number">Step 10 of 10 (Optional)</span>
-            <h1 id="step-10-title" class="step-title">Custom Agents</h1>
-            <p class="step-duration">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
-              </svg>
-              15 minutes
-            </p>
-          </header>
-
-          <p>Custom Agents allow you to create specialized AI assistants for specific tasks in your project. This is an optional but powerful feature to enhance your workflow.</p>
-
-          <h2>What are Custom Agents?</h2>
-          <p>Custom Agents are specialized AI assistants you can configure for specific tasks. They can be scoped to particular file types, coding patterns, or documentation tasks.</p>
-
-          <h2>Creating a Custom Agent</h2>
-          <p>You can create custom agents for specific tasks. For example, a "README creator" agent:</p>
-          <ol>
-            <li>Create a file: <code>.github/agents/readme-creator-agent.md</code></li>
-            <li>Add agent configuration:</li>
-          </ol>
-
-          <pre><code>---
-name: readme-creator
-description: Agent specializing in creating and improving README files
----
-
-You are a documentation specialist focused on README files. Your scope is limited to README files or other related documentation files only - DO NOT modify or analyze code files.
-
-Focus on the following instructions:
-- Create and update README.md files with clear project descriptions
-- Structure README sections logically: overview, installation, usage, contributing
-- Write scannable content with proper headings and formatting
-- Add appropriate badges, links, and navigation elements</code></pre>
-
-          <h2>More Custom Agent Examples</h2>
-          <p>Here are some other useful custom agents you can create:</p>
-
-          <h3>Code Reviewer Agent</h3>
-          <pre><code>---
-name: code-reviewer
-description: Agent that reviews code for best practices and potential issues
----
-
-You are a senior developer focused on code quality. Review code for:
-- Security vulnerabilities
-- Performance issues
-- Code style and consistency
-- Best practices for the language/framework</code></pre>
-
-          <h3>Test Writer Agent</h3>
-          <pre><code>---
-name: test-writer
-description: Agent specialized in writing unit and integration tests
----
-
-You are a testing specialist. When asked to write tests:
-- Follow the existing test patterns in the project
-- Cover edge cases and error conditions
-- Use descriptive test names
-- Include both positive and negative test cases</code></pre>
-
-          <div class="info-box tip">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="12" y1="16" x2="12" y2="12"/>
-              <line x1="12" y1="8" x2="12.01" y2="8"/>
-            </svg>
-            <div class="info-box-content">
-              <strong>Tip</strong>
-              <p>Refer to the <a href="https://github.com/github/awesome-copilot/tree/main/agents" target="_blank" rel="noopener noreferrer">Awesome Copilot Repository</a> for more custom agent examples and best practices.</p>
-            </div>
-          </div>
-
           <h2>🎉 Congratulations!</h2>
           <p>You've completed the "Start Coding with AI" learning path! You've learned:</p>
           <ul>
-            <li>Using specifications to develop an application</li>
-            <li>Code explanation and improvement</li>
-            <li>Utilizing agent functionality</li>
-            <li>Adding tests and documentation</li>
-            <li>Creating custom agents for specialized tasks</li>
+            <li>Setting up a project and workspace for Copilot</li>
+            <li>Using code completion to speed up everyday coding</li>
+            <li>Getting context-aware help and debugging support from Copilot Chat</li>
+            <li>Using Agent Mode for autonomous, multi-step tasks</li>
+            <li>Planning complex features with Plan Mode before implementation</li>
+            <li>Generating unit tests and comprehensive documentation</li>
           </ul>
 
           <h3>Next Steps</h3>
