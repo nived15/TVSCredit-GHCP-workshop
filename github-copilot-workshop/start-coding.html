@@ -141,11 +141,6 @@
             <li>Click the <strong>Fork</strong> button in the top right</li>
           </ol>
 
-          <figure class="image-container">
-            <img src="img/screenshot_fork_arrow.png" alt="Click Fork button in the GitHub repository header">
-            <figcaption>Click the Fork button to create your own copy of the repository</figcaption>
-          </figure>
-
           <ol start="3">
             <li>Click the <code>Create fork</code> button on the fork creation screen. Once the fork is complete, a copy of the repository will be created in your GitHub account.</li>
           </ol>
@@ -293,22 +288,12 @@
             <li>Or open the Chat panel with <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>I</kbd> (macOS: <kbd>Ctrl</kbd>+<kbd>Cmd</kbd>+<kbd>I</kbd>)</li>
           </ol>
 
-          <figure class="image-container">
-            <img src="img/ask-mode.png" alt="Copilot Chat interface in VS Code showing the Ask mode">
-            <figcaption>The Copilot Chat panel in VS Code</figcaption>
-          </figure>
-
           <h2>Key Features</h2>
 
           <h3>1. Explain Code</h3>
           <p><strong>Model to use for this exercise:</strong> GPT-5 mini</p>
           <p>Option 1: Select code and ask Copilot to explain it:</p>
           <pre><code>Please explain this entire file.</code></pre>
-
-          <figure class="image-container">
-            <img src="img/ask-explain.png" alt="Copilot explaining code in the chat panel">
-            <figcaption>Copilot provides detailed explanations of your code</figcaption>
-          </figure>
 
           <p>Option 2: Select code and ask Copilot to explain it using slash commands:</p>
           <pre><code>/explain</code></pre>
@@ -376,15 +361,10 @@
 
           <p><strong>Model to use for this exercise:</strong> Claude Sonnet 5</p>
 
-          <h2>Example: Plan a Pong Game on an Ultra-Low Credit Budget</h2>
-          <p>Select <strong>Plan</strong> mode in Copilot Chat, then copy and paste the prompt below as-is. It asks Copilot to design a complete plan for a simple Pong game while staying within a strict 25-50 AI credit budget — a great way to see how far a small budget can go.</p>
+          <h2>Example: Plan a Pong Game Demo</h2>
+          <p>Select <strong>Plan</strong> mode in Copilot Chat, then copy and paste the prompt below as-is. It asks Copilot to design a complete plan for a simple Pong game that serves as a clear, self-contained demo of what GitHub Copilot can build.</p>
 
-          <figure class="image-container">
-            <img src="img/plan-mode.png" alt="Selecting Plan mode in Copilot Chat">
-            <figcaption>Switch to Plan mode for structured planning</figcaption>
-          </figure>
-
-          <pre><code>Act as an expert software architect specializing in ultra-low budget AI code generation. I have a strict limit of 25-50 AI credits to build a complete browser game.
+          <pre><code>Act as an expert software architect specializing in building clean, demo-ready browser games.
 
 Do not write any game code yet. Instead, generate a comprehensive, single-turn development plan for a simple Pong game.
 
@@ -393,7 +373,7 @@ Your plan must include:
 1. Architectural Layout: How to combine HTML5, CSS, and Vanilla JavaScript into a single, lightweight file.
 2. Asset Alternatives: Detailed description of how to use pure CSS and HTML Canvas drawing to avoid external images or sound files.
 3. State Management: A simple layout of the game loop, win/loss conditions, and score tracking variables.
-4. Token Optimization: Strategies to keep the final code generation request highly condensed to fit within minimal credit usage.</code></pre>
+4. Polish and Presentation: Strategies to keep the implementation clean and well-structured so it clearly demonstrates a working, polished game.</code></pre>
 
           <div class="info-box tip">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -403,18 +383,13 @@ Your plan must include:
             </svg>
             <div class="info-box-content">
               <strong>Tip</strong>
-              <p>Review the generated plan before building anything. If a step looks like it will burn too many credits, ask Copilot to simplify it before moving on.</p>
+              <p>Review the generated plan before building anything. If a step looks overly complex, ask Copilot to simplify it before moving on.</p>
             </div>
           </div>
 
           <h2>Saving the Plan</h2>
           <p>Switch to Agent mode and save the plan so it can guide implementation in the next step:</p>
           <pre><code>Save the development plan in a file called plan.md</code></pre>
-
-          <figure class="image-container">
-            <img src="img/plan-result.png" alt="Development plan saved to file">
-            <figcaption>Your development plan is now documented</figcaption>
-          </figure>
 
           <nav class="step-navigation" aria-label="Step navigation">
             <button class="step-nav-button step-nav-prev" aria-label="Previous step">
@@ -460,12 +435,7 @@ Your plan must include:
 
           <h2>Use Case 1: Build the App from the Plan</h2>
           <p>Using the <code>plan.md</code> file you saved in the previous step, ask Agent Mode to implement it:</p>
-          <pre><code>Using the plan.md file we created, implement the Pong game exactly as specified. Keep the implementation in a single HTML file and keep the code generation condensed to conserve AI credits.</code></pre>
-
-          <figure class="image-container">
-            <img src="img/agent-mode.png" alt="Agent mode implementing code changes automatically">
-            <figcaption>Agent Mode working autonomously on a coding task</figcaption>
-          </figure>
+          <pre><code>Using the plan.md file we created, implement the Pong game exactly as specified. Keep the implementation in a single HTML file, clean and well-structured, so it clearly demonstrates a polished, working game.</code></pre>
 
           <h2>Use Case 2: Add a Dark/Light Theme Toggle</h2>
           <p>Small, self-contained features are a great way to try Agent Mode without spending a lot of credits:</p>
@@ -526,19 +496,9 @@ Please create 2-3 unit tests for the most important function(s) in this applicat
 Install necessary libraries to support this change.
 Then in the readme file, add explanation on how to run the unit tests.</code></pre>
 
-          <figure class="image-container">
-            <img src="img/generate-UT.png" alt="Copilot creating unit tests">
-            <figcaption>Copilot generates comprehensive unit tests</figcaption>
-          </figure>
-
           <h2>Running Tests</h2>
           <p>You can ask Copilot to run the tests directly from the Chat panel:</p>
           <pre><code>Run the unit tests and show me the results.</code></pre>
-
-          <figure class="image-container">
-            <img src="img/test-exec.png" alt="Unit test results">
-            <figcaption>Unit test results in the terminal</figcaption>
-          </figure>
 
           <div class="info-box tip">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -591,16 +551,6 @@ Then in the readme file, add explanation on how to run the unit tests.</code></p
           <h2>Generate Application Documentation</h2>
           <p>Use this prompt to create detailed documentation:</p>
           <pre><code>Create a documentation on how the current application works. Limit each important section to 4-5 concise bullet points. Add a user flow chart and sequence diagram, using Mermaid format.</code></pre>
-
-          <figure class="image-container">
-            <img src="img/ide-doc2.png" alt="Generated documentation">
-            <figcaption>Copilot generates comprehensive documentation</figcaption>
-          </figure>
-
-          <figure class="image-container">
-            <img src="img/ide-doc.png" alt="Mermaid diagrams in documentation">
-            <figcaption>Documentation includes Mermaid diagrams for visual representation</figcaption>
-          </figure>
 
           <h2>🎉 Congratulations!</h2>
           <p>You've completed the "Start Coding with AI" learning path! You've learned:</p>
