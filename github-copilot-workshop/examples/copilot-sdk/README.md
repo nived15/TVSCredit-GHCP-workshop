@@ -110,8 +110,8 @@ data: {"choices": [{"delta": {}, "finish_reason": "stop"}]}
 
 ## Resources
 
-- [Building Copilot Extensions](https://docs.github.com/copilot/building-copilot-extensions) — Official GitHub documentation
-- [Copilot Extensions Quickstart](https://docs.github.com/copilot/building-copilot-extensions/creating-a-copilot-extension/creating-a-github-app-for-your-copilot-extension) — Step-by-step guide
+- [Building Copilot Extensions](https://docs.github.com/en/copilot/building-copilot-extensions/about-building-copilot-extensions) — Official GitHub documentation
+- [Copilot Extensions Quickstart](https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/about-creating-github-apps) — Step-by-step guide
 - [GitHub Apps Documentation](https://docs.github.com/apps) — Creating and managing GitHub Apps
 - [Model Context Protocol](https://modelcontextprotocol.io/) — Reference implementation
 

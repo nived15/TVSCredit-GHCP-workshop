@@ -1,11 +1,6 @@
 ---
 name: write-tests
-description: Write comprehensive unit tests following best practices
-applyTo:
-  - "**/*.test.js"
-  - "**/*.test.ts"
-  - "**/*.spec.js"
-  - "**/*.spec.ts"
+description: Write comprehensive unit tests following best practices. Use when asked to add, generate, or improve unit tests, or when creating .test/.spec files.
 ---
 
 # Writing Unit Tests

@@ -204,6 +204,6 @@ Use serverless framework or AWS SAM.
 
 ## Resources
 
-- [Building Copilot Extensions](https://docs.github.com/copilot/building-copilot-extensions)
+- [Building Copilot Extensions](https://docs.github.com/en/copilot/building-copilot-extensions/about-building-copilot-extensions)
 - [Express.js Documentation](https://expressjs.com/)
 - [Server-Sent Events Specification](https://html.spec.whatwg.org/multipage/server-sent-events.html)
