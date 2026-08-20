@@ -1,5 +1,5 @@
 const express = require('express');
-const crypto = require('crypto');
+const crypto = require('node:crypto');
 
 const app = express();
 const PORT = process.env.PORT || 3000;

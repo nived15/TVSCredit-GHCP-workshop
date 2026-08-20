@@ -26,14 +26,14 @@ Learn IDE-based Copilot features through hands-on exercises. Perfect for develop
 1. Project Setup
 2. Code Completion
 3. Copilot Chat
-4. Agent Mode
-5. Plan Mode
+4. Plan Mode
+5. Agent Mode
 6. Add Unit Tests
 7. Add Documentation
 
-### Path 2: Copilot Pro Features
+### Path 2: Build with Copilot Agents
 
-Explore advanced Copilot features for professional development workflows.
+Customize Copilot with instructions, custom agents, and skills, then put them to work.
 
 **Topics Covered:**
 1. Copilot Instructions
@@ -57,12 +57,12 @@ Visit the workshop at **[https://nived15.github.io/TVSCredit-GHCP-workshop/](htt
 
 1. Clone this repository:
    ```bash
-   git clone <REPOSITORY_URL>
+   git clone https://github.com/nived15/TVSCredit-GHCP-workshop.git
    ```
 
 2. Navigate to the project directory:
    ```bash
-   cd copilot-workshop
+   cd TVSCredit-GHCP-workshop
    ```
 
 3. Open `index.html` in your browser or use a local server:
@@ -79,17 +79,18 @@ Visit the workshop at **[https://nived15.github.io/TVSCredit-GHCP-workshop/](htt
 ## Project Structure
 
 ```
-copilot-workshop/
+TVSCredit-GHCP-workshop/
 ├── index.html                      # Main landing page
 ├── README.md                       # This file
 └── github-copilot-workshop/
     ├── start-coding.html           # Path 1: Start Coding with AI
-    ├── pro-features.html           # Path 2: Copilot Pro Features
+    ├── pro-features.html           # Path 2: Build with Copilot Agents
     ├── codelab.json                # Workshop metadata
     ├── css/
     │   └── styles.css              # Stylesheet
     ├── js/
     │   └── main.js                 # JavaScript functionality
+    ├── examples/                   # Reference material (skills, agents, SDK samples)
     └── img/                        # Screenshots and images
 ```
 

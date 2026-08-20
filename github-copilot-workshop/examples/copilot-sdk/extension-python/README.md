@@ -222,6 +222,6 @@ CMD ["python", "app.py"]
 
 ## Resources
 
-- [Building Copilot Extensions](https://docs.github.com/copilot/building-copilot-extensions)
+- [Building Copilot Extensions](https://docs.github.com/en/copilot/building-copilot-extensions/about-building-copilot-extensions)
 - [Flask Documentation](https://flask.palletsprojects.com/)
 - [Server-Sent Events Specification](https://html.spec.whatwg.org/multipage/server-sent-events.html)

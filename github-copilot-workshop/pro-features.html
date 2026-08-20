@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Explore advanced GitHub Copilot features for professional development. Learn about Copilot Instructions, Custom Agents, Agent Skills, and end-to-end app development.">
   <meta name="theme-color" content="#6C21D9">
-  <title>Copilot Pro Features - GitHub Copilot Workshop</title>
+  <title>Build with Copilot Agents - GitHub Copilot Workshop</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +26,7 @@
     <nav class="header-nav" aria-label="Main navigation">
       <a href="../index.html" class="header-nav-link">Home</a>
       <a href="start-coding.html" class="header-nav-link">Start Coding with AI</a>
-      <a href="pro-features.html" class="header-nav-link active">Copilot Pro Features</a>
+      <a href="pro-features.html" class="header-nav-link active">Build with Copilot Agents</a>
       <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
         <svg class="theme-toggle-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -48,7 +48,7 @@
           </svg>
           Back to Home
         </a>
-        <h2 class="sidebar-title">Copilot Pro Features</h2>
+        <h2 class="sidebar-title">Build with Copilot Agents</h2>
       </div>
       
       <nav class="sidebar-nav">
@@ -331,10 +331,10 @@ When asked about a file, folder, or workflow:
             </p>
           </header>
 
-          <p>Agent Skills in VS Code Copilot Chat allow you to define custom, reusable behaviors that guide how Copilot responds to specific types of requests. Skills are defined using markdown files that Copilot discovers and invokes automatically based on the context of your conversation.</p>
+          <p>Agent Skills let you teach Copilot custom, reusable capabilities. A skill is a folder of instructions (and optionally scripts or resources) that Copilot loads on demand when your request matches what the skill does. Agent Skills follow an <a href="https://agentskills.io" target="_blank" rel="noopener noreferrer">open standard</a> and work across Copilot in VS Code, Copilot CLI, and the Copilot cloud agent.</p>
 
           <h2>What are Agent Skills?</h2>
-          <p>Skills are instructions stored in <code>.SKILL.md</code> files that tell Copilot how to handle specific tasks or workflows. When you ask Copilot a question, it can detect which skills are relevant and use them to provide more tailored, domain-specific responses.</p>
+          <p>A skill is a <strong>directory</strong> containing a file named exactly <code>SKILL.md</code>. Copilot reads every skill's <code>name</code> and <code>description</code> up front, then loads the full instructions only when that skill is relevant to your request.</p>
 
           <p>Think of skills as specialized tools in Copilot's toolkit — each one teaches Copilot a specific capability, such as:</p>
           <ul>
@@ -345,20 +345,36 @@ When asked about a file, folder, or workflow:
             <li>Creating boilerplate code for common scenarios</li>
           </ul>
 
-          <p>Skills are automatically loaded when you open a workspace, and Copilot will invoke them based on the conversation context and the skill's <code>applyTo</code> patterns.</p>
+          <h2>Where Skills Live</h2>
+          <p>Project skills go in <code>.github/skills/</code>, with one subdirectory per skill:</p>
+          <pre><code>.github/skills/
+├── error-handling/
+│   └── SKILL.md
+├── accessibility/
+│   └── SKILL.md
+└── doc-style/
+    └── SKILL.md</code></pre>
+
+          <div class="info-box warning">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+            <div class="info-box-content">
+              <strong>Important</strong>
+              <p>The file must be named exactly <code>SKILL.md</code>. A file like <code>error-handling.SKILL.md</code> will not be discovered. Copilot also recognises <code>.claude/skills/</code> and <code>.agents/skills/</code> for project skills, and <code>~/.copilot/skills/</code> for personal skills that follow you across repositories.</p>
+            </div>
+          </div>
 
           <h2>Creating Your First Skill</h2>
           <p>You can create skills for specific, repeatable tasks. Here are three examples you can adapt:</p>
 
-          <h3>1. Error handling skill (auto-triggers on source files)</h3>
-          <p>Create a file named <code>error-handling.SKILL.md</code> in your <code>.github/copilot/skills/</code> directory:</p>
+          <h3>1. Error handling skill</h3>
+          <p>Create a file at <code>.github/skills/error-handling/SKILL.md</code>:</p>
           <pre><code>---
 name: error-handling
-description: Ensures errors are handled explicitly and safely, not silently swallowed
-applyTo:
-  - "**/*.js"
-  - "**/*.ts"
-  - "**/*.py"
+description: Ensures errors are handled explicitly and safely, not silently swallowed. Use when writing or reviewing code that can fail, such as I/O, network calls, or parsing.
 ---
 
 # Error Handling Style
@@ -369,15 +385,11 @@ When writing or modifying code that can fail:
 3. Distinguish expected errors (validation, not-found) from unexpected ones (crashes, bugs)
 4. Don't swallow errors silently to "make tests pass" — surface them appropriately</code></pre>
 
-          <h3>2. Accessibility skill (auto-triggers on UI files)</h3>
+          <h3>2. Accessibility skill</h3>
+          <p>Create a file at <code>.github/skills/accessibility/SKILL.md</code>:</p>
           <pre><code>---
 name: accessibility
-description: Applies basic accessibility (a11y) practices to UI code
-applyTo:
-  - "**/*.html"
-  - "**/*.jsx"
-  - "**/*.tsx"
-  - "**/*.vue"
+description: Applies basic accessibility (a11y) practices to UI code. Use when generating or editing HTML, JSX, TSX, or Vue markup, or when asked to audit a UI for accessibility.
 ---
 
 # Accessibility Guidelines
@@ -389,13 +401,11 @@ When generating or editing UI markup:
 4. Ensure sufficient color contrast is called out when colors are hardcoded
 5. Preserve keyboard navigability — don't remove focus outlines without a visible alternative</code></pre>
 
-          <h3>3. Documentation skill (kept for the "always vs. auto vs. manual" contrast)</h3>
+          <h3>3. Documentation skill</h3>
+          <p>Create a file at <code>.github/skills/doc-style/SKILL.md</code>:</p>
           <pre><code>---
 name: doc-style
-description: Keeps generated documentation short and structured
-applyTo:
-  - "**/*.md"
-  - "docs/**/*"
+description: Keeps generated documentation short and structured. Use when writing or updating README files, guides, or other Markdown documentation.
 ---
 
 # Documentation Style
@@ -414,25 +424,39 @@ When generating or updating documentation:
             </svg>
             <div class="info-box-content">
               <strong>Tip</strong>
-              <p>The front matter (between <code>---</code> lines) defines metadata about the skill, including when it should be applied. The content provides instructions that guide Copilot's behavior.</p>
+              <p>The front matter (between <code>---</code> lines) requires just <code>name</code> and <code>description</code>. The <code>description</code> is the only signal Copilot uses to decide whether a skill is relevant, so describe both <strong>what</strong> the skill does and <strong>when</strong> to use it. Optionally add <code>allowed-tools</code> to pre-approve tools the skill needs.</p>
             </div>
           </div>
+
+          <h2>Using Your Skill</h2>
+          <p>Skills are discovered automatically when you open the repository. Ask a related question and Copilot selects the matching skill:</p>
+          <pre><code>Add unit tests for the user service</code></pre>
+          <p>You can also invoke one explicitly by name:</p>
+          <pre><code>Use the accessibility skill to audit this page</code></pre>
+
+          <h2>Skills vs Custom Instructions</h2>
+          <p>Both customize Copilot, but they solve different problems:</p>
+          <ul>
+            <li><strong>Skills</strong> teach specialized capabilities and workflows, are loaded on demand, can bundle scripts and resources, and are portable across Copilot in VS Code, the CLI, and the cloud agent.</li>
+            <li><strong>Custom instructions</strong> (Step 1) define always-on coding standards. They are the place for glob-based targeting via the <code>applyTo</code> field in <code>.instructions.md</code> files — skills have no <code>applyTo</code> field.</li>
+          </ul>
 
           <h2>Skill Best Practices</h2>
           <ul>
             <li><strong>Be specific</strong> — Provide concrete examples and clear guidelines rather than vague instructions</li>
             <li><strong>Keep it focused</strong> — Each skill should address one specific task or workflow</li>
+            <li><strong>Write a strong description</strong> — It determines when your skill gets selected, so state what it does and when to use it</li>
             <li><strong>Use code examples</strong> — Show Copilot the exact patterns and style you expect</li>
-            <li><strong>Scope appropriately</strong> — Use <code>applyTo</code> patterns to ensure skills are invoked at the right time</li>
             <li><strong>Document conventions</strong> — Include your team's specific coding standards and patterns</li>
             <li><strong>Version control</strong> — Check skills into your repository so the whole team benefits</li>
           </ul>
 
           <h2>Additional Resources</h2>
           <ul>
-            <li><a href="https://docs.github.com/copilot/customizing-copilot/creating-custom-instructions-for-github-copilot" target="_blank" rel="noopener noreferrer">GitHub Copilot Customization Documentation</a></li>
-            <li><a href="https://code.visualstudio.com/docs/copilot/copilot-chat" target="_blank" rel="noopener noreferrer">VS Code Copilot Chat Documentation</a></li>
-            <li>Sample skills in your repository at <code>.github/copilot/skills/</code></li>
+            <li><a href="https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-skills" target="_blank" rel="noopener noreferrer">Adding agent skills for GitHub Copilot</a></li>
+            <li><a href="https://code.visualstudio.com/docs/agent-customization/agent-skills" target="_blank" rel="noopener noreferrer">Use Agent Skills in VS Code</a></li>
+            <li><a href="https://docs.github.com/en/copilot/reference/customization-cheat-sheet" target="_blank" rel="noopener noreferrer">Copilot customization cheat sheet</a></li>
+            <li>Sample skills in this repository at <code>.github/skills/</code></li>
           </ul>
 
           <nav class="step-navigation" aria-label="Step navigation">
@@ -490,7 +514,7 @@ Please set up the full project structure, implement the backend API, build the f
 
 
           <h2>🎉 Congratulations!</h2>
-          <p>You've completed the "Copilot Pro Features" learning path! You've learned:</p>
+          <p>You've completed the "Build with Copilot Agents" learning path! You've learned:</p>
           <ul>
             <li>Setting up Copilot Instructions for consistent, team-wide code generation</li>
             <li>Creating Custom Agents tailored to your project's specific needs</li>
