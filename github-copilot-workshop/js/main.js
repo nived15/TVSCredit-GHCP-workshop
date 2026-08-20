@@ -177,11 +177,9 @@
       // Update progress bar
       this.updateProgress();
 
-      // Scroll to top of content
-      const content = document.querySelector('.workshop-content');
-      if (content) {
-        content.scrollTo(0, 0);
-      }
+      // Scroll to top of content (the window is the scroll container, not
+      // .workshop-content, which has no overflow of its own)
+      window.scrollTo(0, 0);
 
       // Close mobile sidebar if open
       SidebarManager.close();
