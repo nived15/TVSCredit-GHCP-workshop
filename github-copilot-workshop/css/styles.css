@@ -336,7 +336,9 @@ pre code {
 
 .hero-logo {
   width: 120px;
-  height: 120px;
+  height: auto;
+  aspect-ratio: 257 / 209;
+  object-fit: contain;
   margin: 0 auto var(--spacing-xl);
   filter: drop-shadow(0 4px 20px rgba(108, 33, 217, 0.3));
 }
@@ -1143,7 +1145,7 @@ tr:hover {
 
   .hero-logo {
     width: 80px;
-    height: 80px;
+    height: auto;
   }
 
   .hero-title {

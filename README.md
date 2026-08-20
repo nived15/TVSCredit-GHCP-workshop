@@ -31,9 +31,9 @@ Learn IDE-based Copilot features through hands-on exercises. Perfect for develop
 6. Add Unit Tests
 7. Add Documentation
 
-### Path 2: Copilot Pro Features
+### Path 2: Build with Copilot Agents
 
-Explore advanced Copilot features for professional development workflows.
+Customize Copilot with instructions, custom agents, and skills, then put them to work.
 
 **Topics Covered:**
 1. Copilot Instructions
@@ -84,7 +84,7 @@ copilot-workshop/
 ├── README.md                       # This file
 └── github-copilot-workshop/
     ├── start-coding.html           # Path 1: Start Coding with AI
-    ├── pro-features.html           # Path 2: Copilot Pro Features
+    ├── pro-features.html           # Path 2: Build with Copilot Agents
     ├── codelab.json                # Workshop metadata
     ├── css/
     │   └── styles.css              # Stylesheet
