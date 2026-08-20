@@ -4,7 +4,7 @@ This PR enables GitHub Pages for the TVSCredit-GHCP-workshop repository. After m
 
 ## 1. Enable GitHub Pages in Repository Settings
 
-1. Go to the repository settings: `https://github.com/abhi-singhs/TVSCredit-GHCP-workshop/settings/pages`
+1. Go to the repository settings: `https://github.com/nived15/TVSCredit-GHCP-workshop/settings/pages`
 2. Under "Build and deployment":
    - **Source**: Select "GitHub Actions"
 3. Save the settings
@@ -16,14 +16,14 @@ The deployment workflow will automatically run when:
 - Or manually triggered via the Actions tab
 
 To manually trigger:
-1. Go to Actions tab: `https://github.com/abhi-singhs/TVSCredit-GHCP-workshop/actions`
+1. Go to Actions tab: `https://github.com/nived15/TVSCredit-GHCP-workshop/actions`
 2. Select "Deploy to GitHub Pages" workflow
 3. Click "Run workflow" → "Run workflow"
 
 ## 3. Access the Workshop
 
 Once deployed, the workshop will be accessible at:
-**https://abhi-singhs.github.io/TVSCredit-GHCP-workshop/**
+**https://nived15.github.io/TVSCredit-GHCP-workshop/**
 
 ## What This PR Includes
 
@@ -43,9 +43,9 @@ Once deployed, the workshop will be accessible at:
 ## Verification
 
 After deployment, verify:
-- [ ] Main page loads: `https://abhi-singhs.github.io/TVSCredit-GHCP-workshop/`
-- [ ] Path 1 loads: `https://abhi-singhs.github.io/TVSCredit-GHCP-workshop/github-copilot-workshop/start-coding.html`
-- [ ] Path 2 loads: `https://abhi-singhs.github.io/TVSCredit-GHCP-workshop/github-copilot-workshop/pro-features.html`
+- [ ] Main page loads: `https://nived15.github.io/TVSCredit-GHCP-workshop/`
+- [ ] Path 1 loads: `https://nived15.github.io/TVSCredit-GHCP-workshop/github-copilot-workshop/start-coding.html`
+- [ ] Path 2 loads: `https://nived15.github.io/TVSCredit-GHCP-workshop/github-copilot-workshop/pro-features.html`
 - [ ] All CSS/JS assets load correctly
 - [ ] All images display correctly
 - [ ] Navigation between pages works

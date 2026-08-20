@@ -128,7 +128,7 @@ Ready to contribute code or content changes? Follow these steps:
 ### Cloning the Repository
 
 ```bash
-git clone https://github.com/abhi-singhs/TVSCredit-GHCP-workshop.git
+git clone https://github.com/nived15/TVSCredit-GHCP-workshop.git
 cd TVSCredit-GHCP-workshop
 ```
 
