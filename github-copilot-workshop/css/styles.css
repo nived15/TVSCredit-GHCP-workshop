@@ -523,7 +523,6 @@ pre code {
 .path-card-description {
   color: var(--color-text-secondary);
   margin-bottom: var(--spacing-lg);
-  flex: 1;
   position: relative;
   z-index: 1;
 }
@@ -563,6 +562,7 @@ pre code {
   font-size: var(--font-size-md);
   position: relative;
   z-index: 1;
+  margin-top: auto;
 }
 
 .path-card-action svg {
