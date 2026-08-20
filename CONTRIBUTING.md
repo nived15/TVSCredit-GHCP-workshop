@@ -87,8 +87,8 @@ Ready to contribute code or content changes? Follow these steps:
 
 2. **Clone** your fork locally:
    ```bash
-   git clone https://github.com/<your-username>/copilot-workshop.git
-   cd copilot-workshop
+   git clone https://github.com/<your-username>/TVSCredit-GHCP-workshop.git
+   cd TVSCredit-GHCP-workshop
    ```
 
 3. **Create a feature branch** from `main`:
@@ -128,8 +128,8 @@ Ready to contribute code or content changes? Follow these steps:
 ### Cloning the Repository
 
 ```bash
-git clone https://github.com/Customer-Workshops/copilot-workshop.git
-cd copilot-workshop
+git clone https://github.com/abhi-singhs/TVSCredit-GHCP-workshop.git
+cd TVSCredit-GHCP-workshop
 ```
 
 ### Running the Workshop Locally

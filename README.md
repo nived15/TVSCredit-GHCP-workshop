@@ -2,7 +2,7 @@
 
 Master AI-powered coding with GitHub Copilot through hands-on exercises and real-world examples.
 
-**🚀 [Start the Workshop](https://nived15.github.io/TVSCredit-GHCP-workshop/)**
+**🚀 [Start the Workshop](https://abhi-singhs.github.io/TVSCredit-GHCP-workshop/)**
 
 ## Overview
 
@@ -26,8 +26,8 @@ Learn IDE-based Copilot features through hands-on exercises. Perfect for develop
 1. Project Setup
 2. Code Completion
 3. Copilot Chat
-4. Agent Mode
-5. Plan Mode
+4. Plan Mode
+5. Agent Mode
 6. Add Unit Tests
 7. Add Documentation
 
@@ -51,18 +51,18 @@ Customize Copilot with instructions, custom agents, and skills, then put them to
 
 ### Option 1: Access Online
 
-Visit the workshop at **[https://nived15.github.io/TVSCredit-GHCP-workshop/](https://nived15.github.io/TVSCredit-GHCP-workshop/)** - no installation required!
+Visit the workshop at **[https://abhi-singhs.github.io/TVSCredit-GHCP-workshop/](https://abhi-singhs.github.io/TVSCredit-GHCP-workshop/)** - no installation required!
 
 ### Option 2: Local Development
 
 1. Clone this repository:
    ```bash
-   git clone <REPOSITORY_URL>
+   git clone https://github.com/abhi-singhs/TVSCredit-GHCP-workshop.git
    ```
 
 2. Navigate to the project directory:
    ```bash
-   cd copilot-workshop
+   cd TVSCredit-GHCP-workshop
    ```
 
 3. Open `index.html` in your browser or use a local server:
@@ -79,7 +79,7 @@ Visit the workshop at **[https://nived15.github.io/TVSCredit-GHCP-workshop/](htt
 ## Project Structure
 
 ```
-copilot-workshop/
+TVSCredit-GHCP-workshop/
 ├── index.html                      # Main landing page
 ├── README.md                       # This file
 └── github-copilot-workshop/
@@ -90,6 +90,7 @@ copilot-workshop/
     │   └── styles.css              # Stylesheet
     ├── js/
     │   └── main.js                 # JavaScript functionality
+    ├── examples/                   # Reference material (skills, agents, SDK samples)
     └── img/                        # Screenshots and images
 ```
 

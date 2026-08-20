@@ -1,9 +1,6 @@
 ---
 name: pr-review
-description: Review pull requests with comprehensive criteria for code quality, security, and best practices
-applyTo:
-  - "*.md"
-  - ".github/pull_request_template.md"
+description: Review pull requests with comprehensive criteria for code quality, security, and best practices. Use when asked to review a pull request, review a diff, or assess changes before merging.
 ---
 
 # Pull Request Review Guidelines

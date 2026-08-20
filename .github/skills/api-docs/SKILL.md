@@ -1,15 +1,6 @@
 ---
 name: api-docs
-description: Generate comprehensive API documentation in a consistent format
-applyTo:
-  - "src/api/**/*.js"
-  - "src/api/**/*.ts"
-  - "api/**/*.js"
-  - "api/**/*.ts"
-  - "routes/**/*.js"
-  - "routes/**/*.ts"
-  - "controllers/**/*.js"
-  - "controllers/**/*.ts"
+description: Generate comprehensive API documentation in a consistent format. Use when documenting REST endpoints, controllers, routes, or public functions, or when asked to write or update API reference docs.
 ---
 
 # API Documentation Guidelines
